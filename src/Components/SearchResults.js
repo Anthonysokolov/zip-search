@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-
+import './SearchResults.css'
 
 function SearchResults(props) {  
   return (
@@ -9,15 +9,15 @@ function SearchResults(props) {
           props.results.map((result, index) => {
             const {City, State, Lat, Long, EstimatedPopulation, TotalWages } = result
             return (
-              <div key={index}>
-                <div className="search-results-header">
+              <div className="search-result" key={index}>
+                <div className="search-result-header">
                   <h3>{City}, {State}</h3>
                 </div>
-                <ul>
-                  <li>State: {State}</li>
-                  <li>Location: {Lat}, {Long}</li>
-                  <li>Population (estimated): {EstimatedPopulation}</li>
-                  <li>Total Wages: {TotalWages}</li>
+                <ul className="list">
+                  <li><b>State:</b> {State}</li>
+                  <li><b>Location:</b> {Lat}, {Long}</li>
+                  <li><b>Population (estimated):</b> {EstimatedPopulation}</li>
+                  <li><b>Total Wages:</b> {TotalWages}</li>
                 </ul>
               </div>
           )})

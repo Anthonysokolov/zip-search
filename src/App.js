@@ -18,13 +18,15 @@ class App extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     
-    // fetch results
     fetch(`http://ctp-zip-api.herokuapp.com/zip/${this.state.zipcode}`)
       .then(response => response.json())
       .then(locations => {
         this.setState({results: locations})
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        this.setState({results: []})
+        console.log(error)
+      })
   }
   
   render() {
@@ -33,8 +35,8 @@ class App extends React.Component {
         <header className="App-header">
           <h1>Zip Code Search</h1>
         </header>
-        <div className="search-body"> 
-          <form className="search" onSubmit={this.handleSubmit}>
+        <div className="search-body">  
+          <form className="search-form" onSubmit={this.handleSubmit}>
             <p>Zip Code:</p>
             <input placeholder="Try 10016" onChange={this.handleInput}></input>
           </form>
