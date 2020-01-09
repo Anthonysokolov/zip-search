@@ -7,7 +7,7 @@ class App extends React.Component {
     super(props) 
     this.state = {
       zipcode: "",    
-      results: ""   
+      results: []   
     }
   }
 
@@ -22,12 +22,10 @@ class App extends React.Component {
     // fetch results
     fetch(`http://ctp-zip-api.herokuapp.com/zip/${this.state.zipcode}`)
       .then(response => response.json())
-      .then(json => {
-        console.log(json)
+      .then(locations => {
+        this.setState({results: locations})
       })
-
-
-    console.log(this.state.zipcode)
+      .catch(error => console.log(error))
   }
   
   render() {
