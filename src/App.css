@@ -1,5 +1,3 @@
-
-
 h3 {
   margin: 0px;
 }
@@ -24,13 +22,14 @@ input {
 }
 
 .App-header {
-  background-image: linear-gradient(165deg,rgb(116, 116, 116), rgb(83, 83, 83));
+  background-color: rgb(177, 231, 233);
   min-height: 20vh;
   flex-direction: column;
   align-items: center;
   display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vm
+  in);
   color: black;
 }
 
