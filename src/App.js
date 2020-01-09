@@ -18,7 +18,6 @@ class App extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     
-
     // fetch results
     fetch(`http://ctp-zip-api.herokuapp.com/zip/${this.state.zipcode}`)
       .then(response => response.json())
