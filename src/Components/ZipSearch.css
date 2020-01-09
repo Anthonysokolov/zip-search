@@ -1,0 +1,11 @@
+.search-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
